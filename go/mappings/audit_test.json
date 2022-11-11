@@ -1,0 +1,53 @@
+{
+    "name": "audit_log_initial_cursor_multi_events_has_more",
+    "request": {
+        "urlPathPattern": "/orgs/[^/]+/audit-log",
+        "method": "GET",
+        "headers": {
+            "Authorization": {
+                "matches": "^Bearer [a-zA-Z0-9_\\-.]+$"
+            }
+        },
+        "queryParameters": {
+            "include": {
+                "equalTo": "all"
+            },
+            "order": {
+                "equalTo": "asc"
+            },
+            "per_page": {
+                "equalTo": "100"
+            }
+        }
+    },
+    "response": {
+        "status": 200,
+        "jsonBody": [
+            {
+                "object_id": "{{ object_id | default: 123 }}",
+                "object_name": "{{ object_name | default: "hahaha" }}",
+                "object_flag": "{% if env_flag == 0 %}key0{% elsif env_flag == 1 %}key1{% endif %}",
+                "object_flag2": "{% assign key0 = "aaaaa" %}{% assign key1 = "bbbbb" %}{% if env_flag == 0 %}{{key0}}{% elsif env_flag == 1 %}{{key1}}{% endif %}",
+                "_document_id": "WeRTsdgDnZJCABR9LJd-Aw",
+                "actor": "arunkumarrajan",
+                "org": "netskope-ecosystems",
+                "user": "arunkumarrajan-git",
+                "action": "org.invite_member",
+                "@timestamp": 1640000001000,
+                "created_at": 1640000001000
+            }
+        ],
+        "headers": {
+            "Content-Type": "application/json; charset=utf-8",
+            "X-GitHub-Media-Type": "github.v3; format=json",
+            "X-RateLimit-Limit": "15000",
+            "X-RateLimit-Remaining": "14995",
+            "X-RateLimit-Reset": "1642747492",
+            "X-RateLimit-Used": "5",
+            "X-RateLimit-Resource": "core"
+        },
+        "transformers": [
+            "response-template"
+        ]
+    }
+}
