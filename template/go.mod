@@ -1,4 +1,4 @@
-module github.com/sarahcheng0122/tmpl/tree/main/template
+module github.com/sarahcheng0122/tmpl
 
 go 1.19
 
