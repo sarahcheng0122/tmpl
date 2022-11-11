@@ -1,4 +1,4 @@
-package main
+package template
 
 import (
 	"fmt"
@@ -12,30 +12,30 @@ import (
 	"gopkg.in/osteele/liquid.v1"
 )
 
-func main() {
+// func main() {
 
-	// rd := RenderData{
-	// 	// ObjectID:   12321,
-	// 	// ObjectName: "aaaa",
-	// }
+// 	// rd := RenderData{
+// 	// 	// ObjectID:   12321,
+// 	// 	// ObjectName: "aaaa",
+// 	// }
 
-	path := "mappings/audit_test.json"
-	// err := Render(path, rd)
-	// if err != nil {
-	// 	panic(err)
-	// }
+// 	path := "mappings/audit_test.json"
+// 	// err := Render(path, rd)
+// 	// if err != nil {
+// 	// 	panic(err)
+// 	// }
 
-	rm := map[string]interface{}{
-		"object_id1":   321,
-		"object_name1": "aaa",
-		"env_flag":     1,
-	}
-	err := Render2(path, rm)
-	if err != nil {
-		panic(err)
-	}
+// 	rm := map[string]interface{}{
+// 		"object_id1":   321,
+// 		"object_name1": "aaa",
+// 		"env_flag":     1,
+// 	}
+// 	err := Render2(path, rm)
+// 	if err != nil {
+// 		panic(err)
+// 	}
 
-}
+// }
 
 type RenderData struct {
 	ObjectID   int    `json:"object_id"`
